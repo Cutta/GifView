@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#DA2E1B"
+    xmlns:custom="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/linearLayout"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+        <cuneyt.example.com.gifview.Utils.GifView
+            android:id="@+id/coffe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            custom:gif="@mipmap/wine"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">GifView</string>
+    <string name="loading">Loading</string>
+    <string name="activity">Activity</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="city_names">
+        <item>Kopenhag</item>
+        <item>Kraków</item>
+        <item>Prag</item>
+        <item>Budapest</item>
+        <item>Palermo</item>
+        <item>Florence</item>
+        <item>San Vito La Copa</item>
+        <item>Madrid</item>
+        <item>Milano</item>
+    </string-array>
+
+</resources>
