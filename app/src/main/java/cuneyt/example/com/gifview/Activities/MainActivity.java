@@ -136,6 +136,11 @@ public class MainActivity extends AppCompatActivity {
         switch (index) {
             case 1:
                 gifView1.setVisibility(View.VISIBLE);
+                gifView1.setPaused(true);
+                gifView1.setMovie();
+                gifView1.setMovieResource();
+                gifView1.setMovieTime();
+                gifView1.getMovie()
                 break;
             case 2:
                 gifView2.setVisibility(View.VISIBLE);
