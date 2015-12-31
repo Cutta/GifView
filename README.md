@@ -1,3 +1,4 @@
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-GifView-green.svg?style=true)](https://android-arsenal.com/details/1/2968)
 # GifView
 Library for playing gifs on Android
 
