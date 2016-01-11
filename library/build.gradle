@@ -5,7 +5,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
-    group='com.github.SerhatSurguvec'
+    group='com.github.Cutta'
 
 
     defaultConfig {
