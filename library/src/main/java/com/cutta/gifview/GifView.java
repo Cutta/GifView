@@ -1,4 +1,4 @@
-package cuneyt.example.com.gifview.Utils;
+package com.cutta.gifview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -9,8 +9,6 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
-
-import cuneyt.example.com.gifview.R;
 
 /**
  * Created by Cuneyt on 4.10.2015.

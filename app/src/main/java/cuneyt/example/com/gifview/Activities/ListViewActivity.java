@@ -3,21 +3,17 @@ package cuneyt.example.com.gifview.Activities;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.cutta.gifview.GifView;
 
 import cuneyt.example.com.gifview.R;
-import cuneyt.example.com.gifview.Utils.GifView;
 
 /**
  * Created by Cuneyt on 14.10.2015.

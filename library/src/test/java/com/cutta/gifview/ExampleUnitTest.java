@@ -1,4 +1,4 @@
-package cuneyt.example.com.gifview;
+package com.cutta.gifview;
 
 import org.junit.Test;
 

@@ -12,61 +12,61 @@
         android:gravity="center"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif1"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif1"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif2"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif2"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif3"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif3"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif4"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif4"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif5"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif5"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif6"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif6"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif7"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif7"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif8"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif1"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif9"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             custom:gif="@mipmap/gif9"/>
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cutta.gifview.GifView
             android:id="@+id/gif10"
             android:visibility="gone"
             android:layout_width="wrap_content"

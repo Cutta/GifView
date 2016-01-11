@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.cutta.gifview.GifView;
 
 import cuneyt.example.com.gifview.Fragments.GifFragment;
 import cuneyt.example.com.gifview.R;
-import cuneyt.example.com.gifview.Utils.GifView;
 
 public class MainActivity extends AppCompatActivity {
     Button loadingBtn1, loadingBtn2, loadingBtn3, loadingBtn4, deletingBtn;
@@ -136,11 +136,11 @@ public class MainActivity extends AppCompatActivity {
         switch (index) {
             case 1:
                 gifView1.setVisibility(View.VISIBLE);
-                gifView1.setPaused(true);
-                gifView1.setMovie();
-                gifView1.setMovieResource();
-                gifView1.setMovieTime();
-                gifView1.getMovie()
+//                gifView1.setPaused(true);
+//                gifView1.setMovie();
+//                gifView1.setMovieResource();
+//                gifView1.setMovieTime();
+//                gifView1.getMovie();
                 break;
             case 2:
                 gifView2.setVisibility(View.VISIBLE);
