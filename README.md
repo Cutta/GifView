@@ -3,7 +3,7 @@
 Library for playing gifs on Android
 
 Simple android view to display gifs efficiently. You can start, pause and stop gifView. Example usages can be found in example project.
-
+Inspired by <a href = "https://github.com/sbakhtiarov/gif-movie-view">sbakhtiarov/gif-movie-view</a>
 # Screen
 <img src = "https://media.giphy.com/media/26tPsYL5hA4IEGAfu/giphy.gif"></img>
 # Usage
