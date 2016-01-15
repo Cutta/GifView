@@ -16,6 +16,7 @@ public class GifFragment extends Fragment {
     private String TAG;
     LayoutInflater inflater;
     private static int InstanceCount = 0;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,8 +27,7 @@ public class GifFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         this.inflater = inflater;
-        View view = inflater.inflate(R.layout.fragment_layout, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_layout, container, false);
     }
 
     public static GifFragment newInstance() {

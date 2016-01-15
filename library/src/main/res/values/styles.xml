@@ -1,0 +1,7 @@
+<resources>
+
+
+    //For GifView Declaration
+    <style name="Widget.GifView" parent="@android:style/Widget"></style>
+
+</resources>

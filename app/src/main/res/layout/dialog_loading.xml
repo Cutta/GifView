@@ -13,28 +13,28 @@
         android:layout_centerHorizontal="true"
         android:gravity="center">
 
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cunoraz.gifview.library.GifView
             android:id="@+id/gif1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
             custom:gif="@mipmap/gif1" />
 
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cunoraz.gifview.library.GifView
             android:id="@+id/gif2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
             custom:gif="@mipmap/gif2" />
 
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cunoraz.gifview.library.GifView
             android:id="@+id/gif3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="gone"
             custom:gif="@mipmap/gif3" />
 
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cunoraz.gifview.library.GifView
             android:id="@+id/gif4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true">
-        <cuneyt.example.com.gifview.Utils.GifView
+        <com.cunoraz.gifview.library.GifView
             android:id="@+id/coffe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

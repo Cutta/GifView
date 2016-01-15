@@ -15,10 +15,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.cunoraz.gifview.library.GifView;
 
 import cuneyt.example.com.gifview.Fragments.GifFragment;
 import cuneyt.example.com.gifview.R;
-import cuneyt.example.com.gifview.Utils.GifView;
 
 public class MainActivity extends AppCompatActivity {
     Button loadingBtn1, loadingBtn2, loadingBtn3, loadingBtn4, deletingBtn;
@@ -33,14 +33,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        activity = (Button)findViewById(R.id.activity);
+        activity = (Button) findViewById(R.id.activity);
         activity.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity();
             }
         });
-        fragment = (Button)findViewById(R.id.fragment);
+        fragment = (Button) findViewById(R.id.fragment);
         fragment.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,12 +101,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void openActivity(){
-        Intent i = new Intent(MainActivity.this,ListViewActivity.class);
+    public void openActivity() {
+        Intent i = new Intent(MainActivity.this, ListViewActivity.class);
         startActivity(i);
     }
 
-    public void openFragment(){
+    public void openFragment() {
         FragmentTransaction trans = getSupportFragmentManager()
                 .beginTransaction();
         GifFragment fragment = new GifFragment().newInstance();
@@ -116,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         trans.addToBackStack(fragment.getTAG());
         trans.commitAllowingStateLoss();
     }
+
     public void showToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast, null);
@@ -136,11 +137,11 @@ public class MainActivity extends AppCompatActivity {
         switch (index) {
             case 1:
                 gifView1.setVisibility(View.VISIBLE);
-                gifView1.setPaused(true);
+            /*    gifView1.setPaused(true);
                 gifView1.setMovie();
                 gifView1.setMovieResource();
                 gifView1.setMovieTime();
-                gifView1.getMovie()
+                gifView1.getMovie()*/
                 break;
             case 2:
                 gifView2.setVisibility(View.VISIBLE);

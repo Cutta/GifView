@@ -9,4 +9,5 @@
         <attr name="gifViewStyle" format="reference" />
     </declare-styleable>
 
+
 </resources>
