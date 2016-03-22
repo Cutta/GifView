@@ -109,22 +109,22 @@ public class MainActivity extends AppCompatActivity {
     public void openFragment() {
         FragmentTransaction trans = getSupportFragmentManager()
                 .beginTransaction();
-        GifFragment fragment = new GifFragment().newInstance();
-        fragment.setHasOptionsMenu(true);
-        trans.replace(R.id.frame, fragment, fragment.getTAG());
+        GifFragment fragmentLocal = new GifFragment().newInstance();
+        fragmentLocal.setHasOptionsMenu(true);
+        trans.replace(R.id.frame, fragmentLocal, fragmentLocal.getTAG());
         trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        trans.addToBackStack(fragment.getTAG());
+        trans.addToBackStack(fragmentLocal.getTAG());
         trans.commitAllowingStateLoss();
     }
 
     public void showToast() {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.custom_toast, null);
-        Toast toast = new Toast(getApplicationContext());
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-        toast.setDuration(Toast.LENGTH_LONG);
-        toast.setView(layout);
-        toast.show();
+        Toast toastLocal = new Toast(getApplicationContext());
+        toastLocal.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+        toastLocal.setDuration(Toast.LENGTH_LONG);
+        toastLocal.setView(layout);
+        toastLocal.show();
     }
 
     public void openLoadingDialog(int index) {

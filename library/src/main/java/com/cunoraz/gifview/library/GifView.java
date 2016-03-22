@@ -21,7 +21,7 @@ public class GifView extends View {
     private Movie mMovie;
 
     private long mMovieStart;
-    private int mCurrentAnimationTime = 0;
+    private int mCurrentAnimationTime;
 
     /**
      * Position for drawing animation frames in the center of the view.
@@ -40,7 +40,7 @@ public class GifView extends View {
     private int mMeasuredMovieWidth;
     private int mMeasuredMovieHeight;
 
-    private volatile boolean mPaused = false;
+    private volatile boolean mPaused;
     private boolean mVisible = true;
 
     public GifView(Context context) {
