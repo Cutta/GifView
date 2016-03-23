@@ -15,7 +15,7 @@ import cuneyt.example.com.gifview.R;
 public class GifFragment extends Fragment {
     private String TAG;
     LayoutInflater inflater;
-    private static int InstanceCount = 0;
+    private static int instanceCount;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class GifFragment extends Fragment {
 
     public static GifFragment newInstance() {
         GifFragment fragment = new GifFragment();
-        fragment.setTAG((GifFragment.InstanceCount++) + "");
+        fragment.setTAG((GifFragment.instanceCount++) + "");
         return fragment;
     }
 
