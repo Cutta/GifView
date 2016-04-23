@@ -19,8 +19,8 @@ import cuneyt.example.com.gifview.R;
  * Created by Cuneyt on 14.10.2015.
  */
 public class ListViewActivity extends ListActivity {
-    SwipeRefreshLayout mSwipeRefreshLayout;
-    ListView listView;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private ListView listView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
