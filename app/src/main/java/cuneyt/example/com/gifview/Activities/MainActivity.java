@@ -21,10 +21,14 @@ import cuneyt.example.com.gifview.Fragments.GifFragment;
 import cuneyt.example.com.gifview.R;
 
 public class MainActivity extends AppCompatActivity {
-    Button loadingBtn1, loadingBtn2, loadingBtn3, loadingBtn4, deletingBtn;
-    Button toast;
-    Button fragment;
-    Button activity;
+    private Button loadingBtn1;
+    private Button loadingBtn2;
+    private Button loadingBtn3;
+    private Button loadingBtn4;
+    private Button deletingBtn;
+    private Button toast;
+    private Button fragment;
+    private Button activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,6 +155,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case 4:
                 gifView4.setVisibility(View.VISIBLE);
+                break;
+            default:
                 break;
         }
 
