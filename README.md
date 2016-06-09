@@ -25,7 +25,7 @@ Inspired by <a href = "https://github.com/sbakhtiarov/gif-movie-view">sbakhtiaro
                        gifView1.getMovie();
                        
 #Sample APK
-https://www.dropbox.com/s/m1y1npssj5b4bck/app-debug.apk?dl=0
+https://www.dropbox.com/s/a4rl91lmlm6loj0/base%20%281%29.apk?dl=0
 
 
 #License
