@@ -1,4 +1,8 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-GifView-green.svg?style=true)](https://android-arsenal.com/details/1/2968)
+# Deprecated 
+GifView is deprecated. No more development will be taking place. For an up-to-date gif lib use <a href = "https://github.com/bumptech/glide">Glide</a>.
+
+Thanks for all your support!
 # GifView
 Library for playing gifs on Android
 
