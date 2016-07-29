@@ -6,19 +6,19 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Movie;
 import android.os.Build;
-import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.view.View;
 
 /**
  * Created by Cuneyt on 4.10.2015.
+ * Gifview
  */
 public class GifView extends View {
 
-    private static final int DEFAULT_MOVIEW_DURATION = 1000;
+    private static final int DEFAULT_MOVIE_VIEW_DURATION = 1000;
 
     private int mMovieResourceId;
-    private Movie mMovie;
+    private Movie movie;
 
     private long mMovieStart;
     private int mCurrentAnimationTime;
@@ -68,7 +68,8 @@ public class GifView extends View {
             setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
 
-        final TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.GifView, defStyle, R.style.Widget_GifView);
+        final TypedArray array = context.obtainStyledAttributes(attrs,
+                R.styleable.GifView, defStyle, R.style.Widget_GifView);
 
         //-1 is default value
         mMovieResourceId = array.getResourceId(R.styleable.GifView_gif, -1);
@@ -77,57 +78,63 @@ public class GifView extends View {
         array.recycle();
 
         if (mMovieResourceId != -1) {
-            mMovie = Movie.decodeStream(getResources().openRawResource(mMovieResourceId));
+            movie = Movie.decodeStream(getResources().openRawResource(mMovieResourceId));
         }
     }
 
-    public void setMovieResource(int movieResId) {
-        this.mMovieResourceId = movieResId;
-        mMovie = Movie.decodeStream(getResources().openRawResource(mMovieResourceId));
+    public void setGifResource(int movieResourceId) {
+        this.mMovieResourceId = movieResourceId;
+        movie = Movie.decodeStream(getResources().openRawResource(mMovieResourceId));
         requestLayout();
     }
 
-    public void setMovie(Movie movie) {
-        this.mMovie = movie;
-        requestLayout();
+    public int getGifResource() {
+
+        return this.mMovieResourceId;
     }
 
-    public Movie getMovie() {
-        return mMovie;
-    }
 
-    public void setMovieTime(int time) {
-        mCurrentAnimationTime = time;
-        invalidate();
-    }
+    public void play() {
+        if (this.mPaused) {
+            this.mPaused = false;
 
-    public void setPaused(boolean paused) {
-        this.mPaused = paused;
-
-        /**
-         * Calculate new movie start time, so that it resumes from the same
-         * frame.
-         */
-        if (!paused) {
+            /**
+             * Calculate new movie start time, so that it resumes from the same
+             * frame.
+             */
             mMovieStart = android.os.SystemClock.uptimeMillis() - mCurrentAnimationTime;
+
+            invalidate();
+        }
+    }
+
+    public void pause() {
+        if (!this.mPaused) {
+            this.mPaused = true;
+
+            invalidate();
         }
 
-        invalidate();
     }
+
 
     public boolean isPaused() {
         return this.mPaused;
     }
 
+    public boolean isPlaying() {
+        return !this.mPaused;
+    }
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
-        if (mMovie != null) {
-            int movieWidth = mMovie.width();
-            int movieHeight = mMovie.height();
+        if (movie != null) {
+            int movieWidth = movie.width();
+            int movieHeight = movie.height();
 
 			/*
-			 * Calculate horizontal scaling
+             * Calculate horizontal scaling
 			 */
             float scaleH = 1f;
             int measureModeWidth = MeasureSpec.getMode(widthMeasureSpec);
@@ -140,7 +147,7 @@ public class GifView extends View {
             }
 
 			/*
-			 * calculate vertical scaling
+             * calculate vertical scaling
 			 */
             float scaleW = 1f;
             int measureModeHeight = MeasureSpec.getMode(heightMeasureSpec);
@@ -175,7 +182,7 @@ public class GifView extends View {
         super.onLayout(changed, l, t, r, b);
 
 		/*
-		 * Calculate left / top for drawing in center
+		 * Calculate mLeft / mTop for drawing in center
 		 */
         mLeft = (getWidth() - mMeasuredMovieWidth) / 2f;
         mTop = (getHeight() - mMeasuredMovieHeight) / 2f;
@@ -185,7 +192,7 @@ public class GifView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        if (mMovie != null) {
+        if (movie != null) {
             if (!mPaused) {
                 updateAnimationTime();
                 drawMovieFrame(canvas);
@@ -197,14 +204,13 @@ public class GifView extends View {
     }
 
     /**
-     * Invalidates view only if it is visible.
+     * Invalidates view only if it is mVisible.
      * <br>
      * {@link #postInvalidateOnAnimation()} is used for Jelly Bean and higher.
-     *
      */
     @SuppressLint("NewApi")
     private void invalidateView() {
-        if(mVisible) {
+        if (mVisible) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 postInvalidateOnAnimation();
             } else {
@@ -223,10 +229,10 @@ public class GifView extends View {
             mMovieStart = now;
         }
 
-        int dur = mMovie.duration();
+        int dur = movie.duration();
 
         if (dur == 0) {
-            dur = DEFAULT_MOVIEW_DURATION;
+            dur = DEFAULT_MOVIE_VIEW_DURATION;
         }
 
         mCurrentAnimationTime = (int) ((now - mMovieStart) % dur);
@@ -237,11 +243,11 @@ public class GifView extends View {
      */
     private void drawMovieFrame(Canvas canvas) {
 
-        mMovie.setTime(mCurrentAnimationTime);
+        movie.setTime(mCurrentAnimationTime);
 
         canvas.save(Canvas.MATRIX_SAVE_FLAG);
         canvas.scale(mScale, mScale);
-        mMovie.draw(canvas, mLeft / mScale, mTop / mScale);
+        movie.draw(canvas, mLeft / mScale, mTop / mScale);
         canvas.restore();
     }
 
@@ -255,7 +261,7 @@ public class GifView extends View {
 
     @SuppressLint("NewApi")
     @Override
-    protected void onVisibilityChanged(@NonNull View changedView, int visibility) {
+    protected void onVisibilityChanged(View changedView, int visibility) {
         super.onVisibilityChanged(changedView, visibility);
         mVisible = visibility == View.VISIBLE;
         invalidateView();

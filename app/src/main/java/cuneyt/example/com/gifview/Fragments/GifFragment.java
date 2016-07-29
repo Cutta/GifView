@@ -11,6 +11,7 @@ import cuneyt.example.com.gifview.R;
 
 /**
  * Created by Cuneyt on 14.10.2015.
+ * Display gif on Fragment
  */
 public class GifFragment extends Fragment {
     private String TAG;

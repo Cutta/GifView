@@ -4,16 +4,17 @@
     <string name="activity">Activity</string>
     <string name="action_settings">Settings</string>
 
-    <string-array name="city_names">
-        <item>Kopenhag</item>
-        <item>Kraków</item>
-        <item>Prag</item>
-        <item>Budapest</item>
-        <item>Palermo</item>
-        <item>Florence</item>
-        <item>San Vito La Copa</item>
-        <item>Madrid</item>
-        <item>Milano</item>
+
+    <string-array name="gifs">
+        <item>@mipmap/gif1</item>
+        <item>@mipmap/gif2</item>
+        <item>@mipmap/gif3</item>
+        <item>@mipmap/gif4</item>
+        <item>@mipmap/gif5</item>
+        <item>@mipmap/gif6</item>
+        <item>@mipmap/gif7</item>
+        <item>@mipmap/gif8</item>
+        <item>@mipmap/gif9</item>
     </string-array>
 
 </resources>
