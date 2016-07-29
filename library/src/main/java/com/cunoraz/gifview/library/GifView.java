@@ -23,6 +23,7 @@ public class GifView extends View {
     private long mMovieStart;
     private int mCurrentAnimationTime;
 
+
     /**
      * Position for drawing animation frames in the center of the view.
      */
@@ -160,7 +161,7 @@ public class GifView extends View {
             }
 
 			/*
-			 * calculate overall scale
+             * calculate overall scale
 			 */
             mScale = 1f / Math.max(scaleH, scaleW);
 
@@ -180,7 +181,6 @@ public class GifView extends View {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-
 		/*
 		 * Calculate mLeft / mTop for drawing in center
 		 */
