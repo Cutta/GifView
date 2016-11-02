@@ -12,10 +12,9 @@ Inspired by <a href = "https://github.com/sbakhtiarov/gif-movie-view">sbakhtiaro
 # Usage
 Add these lines on top-level build file
 ```
-allprojects {
-    repositories {
-        jcenter()
-        maven { url "https://jitpack.io" }
+repositories {
+    maven {
+        url "https://jitpack.io"
     }
 }
 ```
