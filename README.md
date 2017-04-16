@@ -41,15 +41,15 @@ compile 'com.github.Cutta:GifView:1.1'
                        gifView1.setMovieTime(time);
                        gifView1.getMovie();
                        
-#Sample APK
+# Sample APK
 https://www.dropbox.com/s/a4rl91lmlm6loj0/base%20%281%29.apk?dl=0
 
-#Credits
+# Credits
 <a href = "https://plus.google.com/u/0/116948443141721480957"><img src = "https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/gplus.png"/></a>
 <a href = "https://twitter.com/Cuneyt_Carikci"><img src = "https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/twitter.png"/></a>
 <a href = "https://www.linkedin.com/in/c%C3%BCneyt-%C3%A7ar%C4%B1k%C3%A7i-b4619161?trk=nav_responsive_tab_profile_pic"><img src = "https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/linkedin.png"/></a>
 
-#License
+# License
 Copyright 2015 Cüneyt Çarıkçi.
 
 Licensed under the Apache License, Version 2.0 (the "License");
