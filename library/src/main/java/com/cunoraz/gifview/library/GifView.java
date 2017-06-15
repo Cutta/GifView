@@ -9,6 +9,9 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 /**
  * Created by Cuneyt on 4.10.2015.
  * Gifview
@@ -43,19 +46,26 @@ public class GifView extends View {
 
     private volatile boolean mPaused;
     private boolean mVisible = true;
+    private Context context;
 
     public GifView(Context context) {
         this(context, null);
+        init(context);
     }
 
     public GifView(Context context, AttributeSet attrs) {
         this(context, attrs, R.styleable.CustomTheme_gifViewStyle);
+        init(context);
     }
 
     public GifView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
         setViewAttributes(context, attrs, defStyle);
+        init(context);
+    }
+
+    private void init(Context context) {
+        this.context = context;
     }
 
     @SuppressLint("NewApi")
@@ -89,8 +99,12 @@ public class GifView extends View {
         requestLayout();
     }
 
-    public int getGifResource() {
+    public void setGifPath(String path) throws FileNotFoundException {
+        movie = Movie.decodeStream(new FileInputStream(path));
+        requestLayout();
+    }
 
+    public int getGifResource() {
         return this.mMovieResourceId;
     }
 
@@ -171,8 +185,8 @@ public class GifView extends View {
             setMeasuredDimension(mMeasuredMovieWidth, mMeasuredMovieHeight);
 
         } else {
-			/*
-			 * No movie set, just set minimum available size.
+            /*
+             * No movie set, just set minimum available size.
 			 */
             setMeasuredDimension(getSuggestedMinimumWidth(), getSuggestedMinimumHeight());
         }
