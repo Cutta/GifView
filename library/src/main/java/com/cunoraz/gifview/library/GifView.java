@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Movie;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import java.io.FileInputStream;
@@ -16,7 +17,7 @@ import java.io.FileNotFoundException;
  * Created by Cuneyt on 4.10.2015.
  * Gifview
  */
-public class GifView extends View {
+public class GifView extends View implements View.OnTouchListener {
 
     private static final int DEFAULT_MOVIE_VIEW_DURATION = 1000;
 
@@ -66,6 +67,14 @@ public class GifView extends View {
 
     private void init(Context context) {
         this.context = context;
+    }
+
+    public void enableTouchListener(boolean touchEnable) {
+        if (touchEnable) {
+            setOnTouchListener(this);
+        } else {
+            setOnTouchListener(null);
+        }
     }
 
     @SuppressLint("NewApi")
@@ -195,8 +204,8 @@ public class GifView extends View {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-		/*
-		 * Calculate mLeft / mTop for drawing in center
+        /*
+         * Calculate mLeft / mTop for drawing in center
 		 */
         mLeft = (getWidth() - mMeasuredMovieWidth) / 2f;
         mTop = (getHeight() - mMeasuredMovieHeight) / 2f;
@@ -286,5 +295,27 @@ public class GifView extends View {
         super.onWindowVisibilityChanged(visibility);
         mVisible = visibility == View.VISIBLE;
         invalidateView();
+    }
+
+    private float dx, dy;
+
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                dx = v.getX() - event.getRawX();
+                dy = v.getY() - event.getRawY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                v.animate()
+                        .x(event.getRawX() + dx)
+                        .y(event.getRawY() + dy)
+                        .setDuration(0)
+                        .start();
+                break;
+            default:
+                return false;
+        }
+        return true;
     }
 }
