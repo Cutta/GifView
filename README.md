@@ -20,7 +20,7 @@ repositories {
 ```
 On app's build.gradle
 ```
-compile 'com.github.Cutta:GifView:1.1'
+implementation 'com.github.Cutta:GifView:1.4'
 ```
 
 # Usage
@@ -40,9 +40,6 @@ compile 'com.github.Cutta:GifView:1.1'
                        gifView1.getGifResource();
                        gifView1.setMovieTime(time);
                        gifView1.getMovie();
-                       
-# Sample APK
-https://www.dropbox.com/s/a4rl91lmlm6loj0/base%20%281%29.apk?dl=0
 
 # Credits
 <a href = "https://plus.google.com/u/0/116948443141721480957"><img src = "https://raw.githubusercontent.com/florent37/DaVinci/master/mobile/src/main/res/drawable-hdpi/gplus.png"/></a>
