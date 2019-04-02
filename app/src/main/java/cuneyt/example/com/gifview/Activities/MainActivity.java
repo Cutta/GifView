@@ -1,10 +1,10 @@
 package cuneyt.example.com.gifview.Activities;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,17 +31,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        gifView = (GifView) findViewById(R.id.gif1);
-        pauseButton = (Button) findViewById(R.id.button_gif_pause);
-        playButton = (Button) findViewById(R.id.button_gif_play);
-        nextButton = (Button) findViewById(R.id.button_gif_next);
-        dialogButton = (Button) findViewById(R.id.button_dialog);
-        fragmentButton = (Button) findViewById(R.id.fragment);
-        toastButton = (Button) findViewById(R.id.toast);
+        gifView = findViewById(R.id.gif1);
+        pauseButton = findViewById(R.id.button_gif_pause);
+        playButton = findViewById(R.id.button_gif_play);
+        nextButton = findViewById(R.id.button_gif_next);
+        dialogButton = findViewById(R.id.button_dialog);
+        fragmentButton = findViewById(R.id.fragment);
+        toastButton = findViewById(R.id.toast);
 
 
         fragmentButton.setOnClickListener(new OnClickListener() {
@@ -120,9 +120,6 @@ public class MainActivity extends AppCompatActivity {
                 openDialog();
             }
         });
-
-
-
     }
 
 

@@ -1,8 +1,8 @@
 package cuneyt.example.com.gifview.Fragments;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +15,6 @@ import cuneyt.example.com.gifview.R;
  */
 public class GifFragment extends Fragment {
     private String TAG;
-    private LayoutInflater inflater;
     private static int instanceCount;
 
     @Override
@@ -27,7 +26,6 @@ public class GifFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        this.inflater = inflater;
         return inflater.inflate(R.layout.fragment_layout, container, false);
     }
 
