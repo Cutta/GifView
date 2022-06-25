@@ -54,7 +54,7 @@ constructor(
 
     @SuppressLint("NewApi")
     private fun setViewAttributes(context: Context, attrs: AttributeSet?, defStyle: Int) {
-        setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+        setLayerType(LAYER_TYPE_SOFTWARE, null)
 
         val array = context.obtainStyledAttributes(
             attrs,
