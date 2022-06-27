@@ -1,10 +1,12 @@
 package cuneyt.example.com.gifview.Activities;
 
 import android.os.Bundle;
+
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -78,38 +80,38 @@ public class MainActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-               switch (index % 10){
-                   case 0:
-                       gifView.setGifResource(R.mipmap.wine);
-                       break;
-                   case 1:
-                       gifView.setGifResource(R.mipmap.gif1);
-                       break;
-                   case 2:
-                       gifView.setGifResource(R.mipmap.gif2);
-                       break;
-                   case 3:
-                       gifView.setGifResource(R.mipmap.gif3);
-                       break;
-                   case 4:
-                       gifView.setGifResource(R.mipmap.gif4);
-                       break;
-                   case 5:
-                       gifView.setGifResource(R.mipmap.gif5);
-                       break;
-                   case 6:
-                       gifView.setGifResource(R.mipmap.gif6);
-                       break;
-                   case 7:
-                       gifView.setGifResource(R.mipmap.gif7);
-                       break;
-                   case 8:
-                       gifView.setGifResource(R.mipmap.gif8);
-                       break;
-                   case 9:
-                       gifView.setGifResource(R.mipmap.gif9);
-                       break;
-               }
+                switch (index % 10) {
+                    case 0:
+                        gifView.setGifResource(R.mipmap.wine);
+                        break;
+                    case 1:
+                        gifView.setGifResource(R.mipmap.gif1);
+                        break;
+                    case 2:
+                        gifView.setGifResource(R.mipmap.gif2);
+                        break;
+                    case 3:
+                        gifView.setGifResource(R.mipmap.gif3);
+                        break;
+                    case 4:
+                        gifView.setGifResource(R.mipmap.gif4);
+                        break;
+                    case 5:
+                        gifView.setGifResource(R.mipmap.gif5);
+                        break;
+                    case 6:
+                        gifView.setGifResource(R.mipmap.gif6);
+                        break;
+                    case 7:
+                        gifView.setGifResource(R.mipmap.gif7);
+                        break;
+                    case 8:
+                        gifView.setGifResource(R.mipmap.gif8);
+                        break;
+                    case 9:
+                        gifView.setGifResource(R.mipmap.gif9);
+                        break;
+                }
                 index++;
             }
         });
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     public void openFragment() {
         FragmentTransaction trans = getSupportFragmentManager()
                 .beginTransaction();
-        GifFragment fragmentLocal =  GifFragment.newInstance();
+        GifFragment fragmentLocal = GifFragment.newInstance();
         fragmentLocal.setHasOptionsMenu(true);
         trans.replace(R.id.frame, fragmentLocal, fragmentLocal.getTAG());
         trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
@@ -144,11 +146,9 @@ public class MainActivity extends AppCompatActivity {
         toastLocal.show();
     }
 
-    public void openDialog(){
+    public void openDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle);
-        builder.setView(getLayoutInflater().inflate(R.layout.dialog_deleting,null));
+        builder.setView(getLayoutInflater().inflate(R.layout.dialog_deleting, null));
         builder.show();
-
     }
-
 }

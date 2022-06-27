@@ -14,10 +14,11 @@ import android.view.View
  * Gifview
  */
 class GifView @JvmOverloads
-constructor(context: Context,
-            attrs: AttributeSet? = null,
-            defStyle: Int = R.styleable.CustomTheme_gifViewStyle)
-    : View(context, attrs, defStyle) {
+constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyle: Int = R.styleable.CustomTheme_gifViewStyle
+) : View(context, attrs, defStyle) {
 
     private var movieMovieResourceId: Int = 0
     private var movie: Movie? = null
@@ -53,10 +54,12 @@ constructor(context: Context,
 
     @SuppressLint("NewApi")
     private fun setViewAttributes(context: Context, attrs: AttributeSet?, defStyle: Int) {
-        setLayerType(View.LAYER_TYPE_SOFTWARE, null)
+        setLayerType(LAYER_TYPE_SOFTWARE, null)
 
-        val array = context.obtainStyledAttributes(attrs,
-                R.styleable.GifView, defStyle, R.style.Widget_GifView)
+        val array = context.obtainStyledAttributes(
+            attrs,
+            R.styleable.GifView, defStyle, R.style.Widget_GifView
+        )
 
         //-1 is default value
         movieMovieResourceId = array.getResourceId(R.styleable.GifView_gif, -1)
@@ -97,10 +100,10 @@ constructor(context: Context,
              * Calculate horizontal scaling
 			 */
             var scaleH = 1f
-            val measureModeWidth = View.MeasureSpec.getMode(widthMeasureSpec)
+            val measureModeWidth = MeasureSpec.getMode(widthMeasureSpec)
 
-            if (measureModeWidth != View.MeasureSpec.UNSPECIFIED) {
-                val maximumWidth = View.MeasureSpec.getSize(widthMeasureSpec)
+            if (measureModeWidth != MeasureSpec.UNSPECIFIED) {
+                val maximumWidth = MeasureSpec.getSize(widthMeasureSpec)
                 if (movieWidth > maximumWidth) {
                     scaleH = movieWidth.toFloat() / maximumWidth.toFloat()
                 }
@@ -109,10 +112,10 @@ constructor(context: Context,
              * calculate vertical scaling
 			 */
             var scaleW = 1f
-            val measureModeHeight = View.MeasureSpec.getMode(heightMeasureSpec)
+            val measureModeHeight = MeasureSpec.getMode(heightMeasureSpec)
 
-            if (measureModeHeight != View.MeasureSpec.UNSPECIFIED) {
-                val maximumHeight = View.MeasureSpec.getSize(heightMeasureSpec)
+            if (measureModeHeight != MeasureSpec.UNSPECIFIED) {
+                val maximumHeight = MeasureSpec.getSize(heightMeasureSpec)
                 if (movieHeight > maximumHeight) {
                     scaleW = movieHeight.toFloat() / maximumHeight.toFloat()
                 }
@@ -120,7 +123,7 @@ constructor(context: Context,
             /*
              * calculate overall scale
 			 */
-            movieScale = 1f / Math.max(scaleH, scaleW)
+            movieScale = 1f / scaleH.coerceAtLeast(scaleW)
             movieMeasuredMovieWidth = (movieWidth * movieScale).toInt()
             movieMeasuredMovieHeight = (movieHeight * movieScale).toInt()
             setMeasuredDimension(movieMeasuredMovieWidth, movieMeasuredMovieHeight)
@@ -139,7 +142,7 @@ constructor(context: Context,
          */
         movieLeft = (width - movieMeasuredMovieWidth) / 2f
         movieTop = (height - movieMeasuredMovieHeight) / 2f
-        isVisible = visibility == View.VISIBLE
+        isVisible = visibility == VISIBLE
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -203,25 +206,24 @@ constructor(context: Context,
     @SuppressLint("NewApi")
     override fun onScreenStateChanged(screenState: Int) {
         super.onScreenStateChanged(screenState)
-        isVisible = screenState == View.SCREEN_STATE_ON
+        isVisible = screenState == SCREEN_STATE_ON
         invalidateView()
     }
 
     @SuppressLint("NewApi")
     override fun onVisibilityChanged(changedView: View, visibility: Int) {
         super.onVisibilityChanged(changedView, visibility)
-        isVisible = visibility == View.VISIBLE
+        isVisible = visibility == VISIBLE
         invalidateView()
     }
 
     override fun onWindowVisibilityChanged(visibility: Int) {
         super.onWindowVisibilityChanged(visibility)
-        isVisible = visibility == View.VISIBLE
+        isVisible = visibility == VISIBLE
         invalidateView()
     }
 
     companion object {
-
         private const val DEFAULT_MOVIE_VIEW_DURATION = 1000
     }
 }

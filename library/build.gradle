@@ -1,14 +1,11 @@
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 android {
-    compileSdkVersion 28
+    compileSdkVersion 32
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.2"
+        targetSdkVersion 32
     }
     buildTypes {
         release {
