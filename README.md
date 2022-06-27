@@ -20,7 +20,7 @@ repositories {
 ```
 On app's build.gradle
 ```
-implementation 'com.github.Cutta:GifView:1.4'
+implementation 'com.github.Cutta:GifView:1.5'
 ```
 
 # Usage
